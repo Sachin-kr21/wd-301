@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import TaskCard from "./TaskCard";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Smarter Tasks</h1>
+      <div className="pending">
+        <h1>Pending</h1>
+        < TaskCard title="Studying" dueDate="01 Jan" assignee="Sachin"/>
+        < TaskCard title="Boxing" dueDate="02 Jan" assignee="Sachin"/>
+        < TaskCard title="Flexing" dueDate="03 Jan" assignee="Sachin"/>
+      </div>
+      <div className="done">
+        <h1>Done</h1>
+          < TaskCard title="Playing" completed="04 Jan" assignee="Sachin"/>
+          < TaskCard title="Listening" completed="05 Jan" assignee="Sachin"/>
+      </div>
     </div>
   );
 }
