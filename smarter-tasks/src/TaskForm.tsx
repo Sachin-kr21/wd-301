@@ -29,13 +29,14 @@ class TaskForm extends React.Component<TaskFormProps,TaskFormState>{
           dueDate: this.state.dueDate,
           description: this.state.description
         }
+        if (this.state.dueDate !== "" && this.state.title !== ""){
         try{
             this.props.addTask(newTask);
         }
         catch(error){
             console.log(error);
         }
-        
+    }
         this.setState({ title: "" });
         this.setState({ dueDate: "" });
         this.setState({ description: "" });
@@ -61,8 +62,8 @@ class TaskForm extends React.Component<TaskFormProps,TaskFormState>{
         return (
             // <div>Task form</div>
             <form onSubmit={this.addTask}>
-                <input type="text" value={this.state.title} onChange={this.titleChanged} required/>
-                <input type="text" id="todoDueDate" value={this.state.dueDate} onChange={this.dueDateChanged} required/>
+                <input type="text" value={this.state.title} onChange={this.titleChanged} />
+                <input type="text" id="todoDueDate" value={this.state.dueDate} onChange={this.dueDateChanged} />
                 <input type="text" id="todoDescription" value={this.state.description} onChange={this.descriptionChanged} />
                 <button type="submit" id="addTaskButton">Add item</button>
             </form>
