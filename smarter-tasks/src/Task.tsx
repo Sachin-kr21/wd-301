@@ -10,7 +10,7 @@ interface TaskProp {
 
 class Task extends React.Component<TaskProp> {
     render() {
-        console.log("hello"+document.getElementsByClassName("TaskItem").length)
+        // console.log("hello"+document.getElementsByClassName("TaskItem").length)
         return (
           <div className="TaskItem shadow-md border border-slate-100" >
             <h2 className="text-base font-bold my-1">{this.props.title}</h2>
