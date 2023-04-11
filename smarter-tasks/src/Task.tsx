@@ -4,11 +4,11 @@ import { TaskItem } from './types';
 
 
 
-interface TaskProp {
-    title : string;
-    dueDate : string;
-    description : string;
-}
+// interface TaskProp {
+//     title : string;
+//     dueDate : string;
+//     description : string;
+// }
 
 // interface TaskIndex{
 //   key : number;

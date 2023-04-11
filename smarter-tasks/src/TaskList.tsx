@@ -6,9 +6,7 @@ interface Props {
     tasks : TaskItem[];
 }
 
-interface State {
-    // tasks: TaskItem[];
-}
+
 
   const TaskList = (props: Props) => {
     const list =props.tasks.map((task, idx) => (

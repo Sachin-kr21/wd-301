@@ -1,4 +1,4 @@
-import React , {useEffect} from "react";
+import React  from "react";
 import { TaskItem } from "./types";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
@@ -83,9 +83,9 @@ const TaskApp = (props: TaskAppProp) => {
     setTaskAppState({ tasks: [...taskAppState.tasks, task] });
   };
 
-  const deleteTask = (task : TaskItem) => {
+  // const deleteTask = (task : TaskItem) => {
     
-  }
+  // }
 
   return (
     <div>
