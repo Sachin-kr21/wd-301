@@ -6,35 +6,21 @@ interface Props {
     tasks : TaskItem[];
 }
 
-// interface TaskItem {
-//     title: string
-// }
-
 interface State {
     // tasks: TaskItem[];
 }
 
-
-class TaskList extends React.Component<Props, State> {
-    // constructor(props: Props) {
-    //   super(props);
-    //   this.state = {
-    //     tasks: [{ title: "Pay rent" }, { title: "Submit assignment" }],
-    //   };
-    // }
-    // componentDidMount() {
-    //     const tasks = [{title : "Pay rent"},{title: "Submit assignment"}];
-    //     this.setState((state , props) => ({
-    //         tasks,
-    //     }));
-    // }
-    render() {
-      // console.log("12345    "+(this.props.tasks).length)
-      return this.props.tasks.map((task , idx) => <div ><Task key={idx} title={task.title} dueDate={task.dueDate} description={task.description} /></div>) ;
-      
-    }
+  const TaskList = (props: Props) => {
+    const list =props.tasks.map((task, idx) => (
+      <Task
+        key={idx}
+        title={task.title}
+        description={task.description}
+        dueDate={task.dueDate}
+      />
+    ));
+  return <>{list}</>;
   }
-
   
 
 
