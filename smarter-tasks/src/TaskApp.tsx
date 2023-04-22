@@ -3,6 +3,8 @@ import { TaskItem } from "./types";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 import { useLocalStorage } from "./hooks/useLocalStorage";
+// import {useState , useEffect} from 'react';
+
 
 interface TaskAppProp {}
 interface TaskAppState {
@@ -83,6 +85,17 @@ const TaskApp = (props: TaskAppProp) => {
     setTaskAppState({ tasks: [...taskAppState.tasks, task] });
   };
 
+  const deleteTask = (task : TaskItem ) => {
+    let len = taskAppState.tasks.length;
+    let tasks = taskAppState.tasks;
+    for(let i=0;i<len;i++){
+      if(tasks[i].title===task.title && tasks[i].description===task.description && tasks[i].dueDate===task.dueDate){
+        tasks.splice(i,1)
+        setTaskAppState({"tasks":tasks})
+        break
+      }
+    }
+  }; 
   // const deleteTask = (task : TaskItem) => {
     
   // }
@@ -90,7 +103,7 @@ const TaskApp = (props: TaskAppProp) => {
   return (
     <div>
       <TaskForm addTask={addTask} />
-      <TaskList tasks={taskAppState.tasks}  />
+      <TaskList tasks={taskAppState.tasks} deleteTask={deleteTask}  />
     </div>
   );
 };

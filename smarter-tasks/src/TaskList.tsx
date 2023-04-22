@@ -4,6 +4,7 @@ import { TaskItem } from "./types";
 
 interface Props {
     tasks : TaskItem[];
+    deleteTask : (task:TaskItem)=>void;
 }
 
 
@@ -15,6 +16,7 @@ interface Props {
         title={task.title}
         description={task.description}
         dueDate={task.dueDate}
+        deleteTask={props.deleteTask}
       />
     ));
   return <>{list}</>;
