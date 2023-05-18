@@ -3,7 +3,6 @@ import { TaskItem } from "./types";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 import { useLocalStorage } from "./hooks/useLocalStorage";
-// import {useState , useEffect} from 'react';
 
 
 interface TaskAppProp {}
