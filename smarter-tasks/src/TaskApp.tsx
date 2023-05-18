@@ -102,7 +102,7 @@ const TaskApp = (props: TaskAppProp) => {
 
   return (
     <div>
-      <TaskForm addTask={addTask} />
+      <TaskForm addTask={addTask} tasks={taskAppState.tasks}/>
       <TaskList tasks={taskAppState.tasks} deleteTask={deleteTask}  />
     </div>
   );

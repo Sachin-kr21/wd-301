@@ -2,6 +2,6 @@ export interface TaskItem {
     title: string;
     dueDate: string;
     description: string;
-    // key: number;
+    id : number;
     deleteTask:(task:TaskItem)=>void;
   }

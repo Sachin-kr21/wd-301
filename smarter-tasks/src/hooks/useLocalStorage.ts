@@ -1,4 +1,5 @@
 import {useState , useEffect} from 'react';
+import { json } from 'stream/consumers';
 
 
 const getStoredValue = <T>(key: string, defaultValue: T): T => {
@@ -18,7 +19,13 @@ const getStoredValue = <T>(key: string, defaultValue: T): T => {
     });
   
     useEffect(() => {
-      localStorage.setItem(key, JSON.stringify(value));
+      let parsedvalue = JSON.parse(JSON.stringify(value))
+      // console.log("parsedvalue"+parsedvalue.tasks[0].title);
+      for(let i=0;i<parsedvalue.tasks.length;i++){
+        parsedvalue.tasks[i].id=i;
+      }
+
+      localStorage.setItem(key, JSON.stringify(parsedvalue));
     }, [key, value]);
   
     return [value, setValue];

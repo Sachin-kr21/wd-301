@@ -3,11 +3,13 @@ import { TaskItem } from "./types";
 
 interface TaskFormProps {
   addTask: (task: TaskItem) => void;
+  tasks : TaskItem[];
 }
 interface TaskFormState {
     title: string,
     description:string,
     dueDate:string;
+    id : number;
     deleteTask:(task:TaskItem)=>void;
 }
 
@@ -66,11 +68,17 @@ const TaskForm = (props: TaskFormProps) => {
     title: "",
     description: "",
     dueDate: "",
+    id: -1 ,
     deleteTask:()=>{}
   });
+  // let lastId = 0 ;
   const titleChanged: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     console.log(`${event.target.value}`);
     setFormState({ ...formState, title: event.target.value });
+    // if (props.tasks.length > 0){
+    //   lastId = props.tasks[props.tasks.length -1].id + 1 ;
+    // }
+    // console.log(lastId,"////")
   };
   const descriptionChanged: React.ChangeEventHandler<HTMLInputElement> = (
     event
@@ -84,13 +92,17 @@ const TaskForm = (props: TaskFormProps) => {
   };
 
   const addTask: React.FormEventHandler<HTMLFormElement> = (event) => {
+
     event.preventDefault();
     console.log(`Submitted the form with`);
     if (formState.title.length === 0 || formState.dueDate.length === 0) {
       return;
     }
+    // setFormState({ ...formState, id: lastId });
+    
+
     props.addTask(formState);
-    setFormState({ title: "", description: "", dueDate: "",deleteTask:()=>{} });
+    setFormState({ title: "", description: "", dueDate: "",id: -1  ,deleteTask:()=>{} });
   };
 
   return (

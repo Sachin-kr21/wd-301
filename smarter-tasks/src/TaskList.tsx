@@ -12,6 +12,7 @@ interface Props {
   const TaskList = (props: Props) => {
     const list =props.tasks.map((task, idx) => (
       <Task
+        id={task.id}
         key={idx}
         title={task.title}
         description={task.description}
