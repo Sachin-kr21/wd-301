@@ -98,6 +98,9 @@ const TaskForm = (props: TaskFormProps) => {
     if (formState.title.length === 0 || formState.dueDate.length === 0) {
       return;
     }
+    
+    window.location.reload();
+    
     // setFormState({ ...formState, id: lastId });
     
 

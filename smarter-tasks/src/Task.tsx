@@ -7,6 +7,7 @@ interface TaskProp {
   title: string,
   description:string,
   dueDate:string
+  
 }
 
 // class Task extends React.Component<TaskProp> {
@@ -29,6 +30,7 @@ const Task = (props: TaskItem) => {
     console.log("clicked");
     props.deleteTask(props)
   };
+  // console.log(props)
   return (
     <li className="TaskItem shadow-md border border-slate-100">
       <Link to={`/tasks/${props.id}`}>
