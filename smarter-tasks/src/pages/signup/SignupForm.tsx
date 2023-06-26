@@ -26,8 +26,20 @@ const SignupForm: React.FC = () => {
       }
 
       console.log('Sign-up successful');
-      navigate("/dashboard");
-      window.location.reload()
+      // navigate("/dashboard");
+      // src/pages/signup/SignupForm.tsx
+      
+      try {
+        // ...
+        // ...
+        
+        // Redirect users to account path after signup
+        navigate("/account")
+        window.location.reload()
+
+    } catch (error) {
+      console.error('Sign-up failed:', error);
+    }
 
       // Dialogue: After successful signup we have to redirect the user to the secured page. We will do that later.
       let data = await response.json()

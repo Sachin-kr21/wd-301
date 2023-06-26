@@ -24,8 +24,20 @@ const SigninForm: React.FC = () => {
       }
 
       console.log('Sign-in successful');
-      navigate("/dashboard");
-      window.location.reload()
+      // navigate("/dashboard");
+      // src/pages/signin/SigninForm.tsx
+      
+      try {
+        // ...
+        // ...
+        
+        // Redirect users to account path after login
+        navigate("/account")
+        window.location.reload()
+
+    } catch (error) {
+      console.error('Sign-in failed:', error);
+    }
       // Dialogue: After successful signin we have to redirect the user to the secured page. We will do that later.
       let data = await response.json()
       localStorage.setItem('authToken',data.token);
