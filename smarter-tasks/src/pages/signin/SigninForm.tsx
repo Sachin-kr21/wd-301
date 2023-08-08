@@ -15,12 +15,12 @@ const SigninForm: React.FC = () => {
   // Dialogue 2: Then we will define the handle submit function
   const onSubmit : SubmitHandler<Inputs> = async (data) => {
     // event.preventDefault();
-    const userData = data;
+    const {email,password} = data;
     try {
       const response = await fetch(`${API_ENDPOINT}/users/sign_in`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify( userData ),
+        body: JSON.stringify( {email,password} ),
       });
 
       if (!response.ok) {

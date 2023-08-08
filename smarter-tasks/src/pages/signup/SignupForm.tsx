@@ -17,12 +17,12 @@ const SignupForm: React.FC = () => {
 
   const onSubmit : SubmitHandler<Inputs> = async (data) => {
     // event.preventDefault();
-    const userData = data;;
+    const {organisationName,userName,userEmail,userPassword} = data;
     try {
       const response = await fetch(`${API_ENDPOINT}/organisations`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(userData),
+        body: JSON.stringify({organisationName,userName,userEmail,userPassword}),
       });
 
       if (!response.ok) {
