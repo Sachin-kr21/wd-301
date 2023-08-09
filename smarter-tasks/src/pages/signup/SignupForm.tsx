@@ -7,10 +7,10 @@ import { useForm, SubmitHandler } from "react-hook-form";
 
 const SignupForm: React.FC = () => {
   type Inputs = {
-    organisationName : string,
-    userName : string,
-    userEmail : string,
-    userPassword : string
+    name : string,
+    user_name : string,
+    email : string,
+    password  : string
   };
   const navigate = useNavigate();
   const {register ,  handleSubmit, formState: { errors } } = useForm<Inputs>();
@@ -18,12 +18,12 @@ const SignupForm: React.FC = () => {
 
   const onSubmit : SubmitHandler<Inputs> = async (data) => {
     // event.preventDefault();
-    const {organisationName,userName,userEmail,userPassword} = data;
+    const userData = data;
     try {
       const response = await fetch(`${API_ENDPOINT}/organisations`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({organisationName,userName,userEmail,userPassword}),
+        body: JSON.stringify(userData),
       });
 
       if (!response.ok) {
@@ -35,6 +35,8 @@ const SignupForm: React.FC = () => {
       // src/pages/signup/SignupForm.tsx
       
       let data = await response.json()
+      console.log(data);
+      
       localStorage.setItem('authToken',data.token);
       localStorage.setItem('userData', JSON.stringify(data.user))
       try {
@@ -63,7 +65,7 @@ const SignupForm: React.FC = () => {
         id="organisationName"
         placeholder='Enter organisation name...'
         autoFocus
-        {...register('organisationName', { required: true })}
+        {...register('name', { required: true })}
         className="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500 focus:shadow-outline-blue" />
       </div>
       <div>
@@ -72,7 +74,7 @@ const SignupForm: React.FC = () => {
         id="userName"
         placeholder='Enter username...'
         autoFocus
-        {...register('userName', { required: true })}
+        {...register('user_name', { required: true })}
         className="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500 focus:shadow-outline-blue" />
       </div>
       <div>
@@ -81,7 +83,7 @@ const SignupForm: React.FC = () => {
         id="userEmail" 
         placeholder='Enter email...'
         autoFocus
-        {...register('userEmail', { required: true })}
+        {...register('email', { required: true })}
         className="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500 focus:shadow-outline-blue" />
       </div>
       <div>
@@ -90,7 +92,7 @@ const SignupForm: React.FC = () => {
         id="userPassword" 
         placeholder='Enter password...'
         autoFocus
-        {...register('userPassword', { required: true })}
+        {...register('password', { required: true })}
         className="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500 focus:shadow-outline-blue" />
       </div>
       <button type="submit" className="w-full bg-gray-700 hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-gray mt-4">Sign up</button>
