@@ -7,7 +7,7 @@ import Signup from "../pages/signup"
 import Projects from "../pages/projects"
 import Members from "../pages/members"
 import Logout from "../pages/logout";
-import Notfound from "../pages/Notfound";
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
     { path: "/", element: <Navigate to="/account/projects" replace /> },
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: (<Notfound/>)
+    element: (<NotFound/>)
   }
 ]);
 

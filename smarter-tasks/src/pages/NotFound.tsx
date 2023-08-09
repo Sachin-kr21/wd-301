@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 
-const Notfound = () => {
+const NotFound = () => {
     const history = useNavigate();
     function handle(){
 
@@ -22,4 +22,4 @@ const Notfound = () => {
  );
 };
 
-export default Notfound;
+export default NotFound;
