@@ -17,5 +17,6 @@ export function ProtectedRoute({ element }: { element: JSX.Element }) {
     return element;
   } else {
     return <Navigate to="/signin" />;
+    
   }
 }
