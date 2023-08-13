@@ -1,9 +1,8 @@
 {
   "name": "smarter-tasks",
   "version": "0.1.0",
-  "type":"module",
+  "type": "module",
   "private": true,
-  
   "dependencies": {
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
@@ -15,6 +14,7 @@
     "@types/react-dom": "^18.0.11",
     "@types/react-router-dom": "^5.3.3",
     "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.0",
     "react-router-dom": "^6.11.0",
@@ -25,7 +25,7 @@
     "build": "tsc && vite build",
     "serve": "vite preview",
     "dev": "vite"
-    },
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.19",
+    "@types/react-beautiful-dnd": "^13.1.4",
     "@vitejs/plugin-react": "^4.0.4",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.27",
