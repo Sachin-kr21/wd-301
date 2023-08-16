@@ -8,6 +8,9 @@ import CheckIcon from "@heroicons/react/24/outline/CheckIcon";
 import { useProjectsState } from "../../context/projects/context";
 import { TaskDetailsPayload } from "../../context/task/types";
 import { useMembersState } from "../../context/members/context";
+import NewComment from "../comments/NewComment"
+import Comments from "../comments";
+
 
 type TaskFormUpdatePayload = TaskDetailsPayload & {
   selectedPerson: string;
@@ -197,9 +200,15 @@ const TaskDetails = () => {
                       </button>
                     </form>
                   </div>
+                  <>
+              <Comments  />
+                  </>
+             
+              
                 </Dialog.Panel>
               </Transition.Child>
             </div>
+
           </div>
         </Dialog>
       </Transition>
