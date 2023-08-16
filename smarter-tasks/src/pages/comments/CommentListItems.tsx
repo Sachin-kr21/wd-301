@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 
 // First, I'll import the useCommentsState custom hook to access comments state.
 import { useCommentsDispatch, useCommentsState } from "../../context/comment/context";
-import { fetchComments } from "../../context/comment/action";
+import { fetchComments } from "../../context/comment/actions";
 export default function CommentListItems() {
 
   // I'll define a new constant called `state`, to call the useCommentsState() hook, 

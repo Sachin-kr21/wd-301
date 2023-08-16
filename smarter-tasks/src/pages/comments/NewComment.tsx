@@ -1,5 +1,5 @@
 import { Dialog } from "@headlessui/react"
-import { addComment } from '../../context/comment/action';
+import { addComment } from '../../context/comment/actions';
 
 import React, { useState } from 'react';
 import { SubmitHandler, useForm } from "react-hook-form";
