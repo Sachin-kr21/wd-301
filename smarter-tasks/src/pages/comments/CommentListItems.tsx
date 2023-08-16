@@ -38,25 +38,48 @@ export default function CommentListItems() {
 
   // And finally I'll iterate over the comments object to show the 
   // individual comments card.
+  // console.log("!",comments);
   
-
-
+  const rev = comments.reverse();
+  // console.log("@",rev);
+  
+  comments.sort
   const dateFunction  = (args : any) => {
     const isoDateString = args.toString();
     const date = new Date(isoDateString);
     const formattedDate = date.toLocaleString();
     return formattedDate;
   }
+
+  const sortByDate =( arr: any) => {
+    const sorter = (a:any, b:any) => {
+       return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+    }
+    arr.sort(sorter);
+ };
+   sortByDate(comments);
+   console.log("@",comments);
+   
   return (
     <>
-      {comments.map((comment: any) => (
-        <div className="comment">
-
-            <p>{comment.User.name}</p>
-            <p>{dateFunction(comment.updatedAt)}</p>
+    
+      {comments
+      .slice(0)
+      .reverse()
+      .map((comment : any ) => (
+        <div className="comment w-full  border" key={comment.id}>
+            <p className="font-bold">{comment.User.name}
+            <span className="float-right font-light">{dateFunction(comment.updatedAt)}</span>
+            </p>
             <p>{comment.description}</p>
+            <br />
         </div>
-      ))}
+        
+      )
+      
+      )
+
+      }
     </>
   );
 }

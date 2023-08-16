@@ -12,6 +12,7 @@ export const fetchComments = async (dispatch: any,args:any) => {
       });
       const data = await response.json();
       dispatch({ type: "FETCH_COMMENTS_SUCCESS", payload: data });
+
     } catch (error) {
       console.log('Error fetching projects:', error);
       dispatch({ type: "FETCH_COMMENTS_FAILURE", payload: 'Unable to load projects' });
@@ -46,6 +47,7 @@ export const addComment = async (dispatch: any, args: any) => {
       // new comment `data`.
       console.log(data,"////2");
       dispatch({ type: 'ADD_COMMENT_SUCCESS', payload: data });
+      fetchComments(dispatch,{projectID:args.projectID,taskID:args.taskID})
   
       // Next, I'll return a status called "ok", with value `true`
       // as everything went well.

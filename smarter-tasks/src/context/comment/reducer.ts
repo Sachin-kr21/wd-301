@@ -67,10 +67,13 @@ interface Comment {
         case 'ADD_COMMENTS_SUCCESS':
       // Here I'll insert new new project object, which is coming in this 
       // `action.payload`, to the `comments` array present in state.
-      // console.log("...",state.comments);
-      
-      return { ...state, comments: [...state.comments, action.payload] }; 
+          console.log("prev state",state.comments);
+          console.log(action.payload);
+          
+          
+          return { ...state, comments: [...state.comments, action.payload] }; 
       case "FETCH_USER_SUCCESS":
+        
         return{
           ...state,
           isLoading: false,
