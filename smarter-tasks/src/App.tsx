@@ -8,7 +8,7 @@ import { ThemeContext } from "./context/theme";
 
 import { ProjectsProvider } from "./context/projects/context";
 import { MembersProvider } from "./context/members/context";
-import { CommentsProvider } from "./context/comments/context";
+import { CommentsProvider } from "./context/comment/context";
 
 // Then I'll wrap the RouterProvider component with the <ProjectsProvider> component.
 const App = () => {

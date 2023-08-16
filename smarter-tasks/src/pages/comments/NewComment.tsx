@@ -1,9 +1,9 @@
 import { Dialog } from "@headlessui/react"
-import { addComment } from '../../context/comments/action';
+import { addComment } from '../../context/comment/action';
 
 import React, { useState } from 'react';
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useCommentsDispatch } from "../../context/comments/context";
+import { useCommentsDispatch } from "../../context/comment/context";
 import { useParams } from "react-router-dom";
 
 type Inputs = {

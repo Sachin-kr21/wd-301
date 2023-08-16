@@ -4,8 +4,8 @@ import { Link, useParams } from "react-router-dom";
 
 
 // First, I'll import the useCommentsState custom hook to access comments state.
-import { useCommentsDispatch, useCommentsState } from "../../context/comments/context";
-import { fetchComments } from "../../context/comments/action";
+import { useCommentsDispatch, useCommentsState } from "../../context/comment/context";
+import { fetchComments } from "../../context/comment/action";
 export default function CommentListItems() {
 
   // I'll define a new constant called `state`, to call the useCommentsState() hook, 
@@ -51,7 +51,7 @@ export default function CommentListItems() {
     <>
       {comments.map((comment: any) => (
         <div className="comment">
-          
+
             <p>{comment.User.name}</p>
             <p>{dateFunction(comment.updatedAt)}</p>
             <p>{comment.description}</p>
