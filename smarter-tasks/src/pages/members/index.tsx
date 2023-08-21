@@ -1,9 +1,9 @@
 import React, { Suspense } from "react";
 import MemberList from "./MemberList";
 import NewMember from "./NewMember";
-import ErrorBoundary from "../../components/ErrorBoundary";
+// import ErrorBoundary from "../../components/ErrorBoundary";
 
-const Members = () => {
+const Projects = () => {
   return (
     <>
       <div className="flex justify-between">
@@ -25,4 +25,4 @@ const Members = () => {
   )
 };
 
-export default Members;
+export default Projects;
