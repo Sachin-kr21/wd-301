@@ -12,12 +12,14 @@ const Members = () => {
           </h2>
         <NewMember />
       </div>
-      <ErrorBoundary>
+      {/* <ErrorBoundary> */}
 
+      {/* <Suspense fallback={<div className="suspense-loading">Loading...</div>}> */}
       <Suspense fallback={<div className="suspense-loading">Loading...</div>}>
+
       <MemberList />
       </Suspense>
-      </ErrorBoundary>
+      {/* </ErrorBoundary> */}
 
     </>
   )
