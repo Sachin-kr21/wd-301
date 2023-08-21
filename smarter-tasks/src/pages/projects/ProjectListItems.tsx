@@ -15,7 +15,9 @@ export default function ProjectListItems() {
   // isLoading, isError and errorMessage property.
   const { projects, isLoading, isError, errorMessage } = state
   console.log(projects);
-
+  // if (projects.length === 0) {
+  //   throw Error("Error!!!");
+  // }
   // If `isLoading` is true, and there are no projects, in that case, 
   // I'll show a loading text
   if (projects.length === 0 && isLoading) {
