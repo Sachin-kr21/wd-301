@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import MemberList from "./MemberList";
 import NewMember from "./NewMember";
-// import ErrorBoundary from "../../components/ErrorBoundary";
+import ErrorBoundary from "../../components/ErrorBoundary";
 
 const Projects = () => {
   return (
@@ -12,14 +12,13 @@ const Projects = () => {
           </h2>
         <NewMember />
       </div>
-      {/* <ErrorBoundary> */}
+      <ErrorBoundary>
 
-      {/* <Suspense fallback={<div className="suspense-loading">Loading...</div>}> */}
       <Suspense fallback={<div className="suspense-loading">Loading...</div>}>
 
       <MemberList />
       </Suspense>
-      {/* </ErrorBoundary> */}
+      </ErrorBoundary>
 
     </>
   )
